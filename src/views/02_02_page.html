@@ -1,0 +1,26 @@
+<%-include('./include/head.ejs',{"title" : "Template" , "listTitle" : "document title : Main" })%>
+<body data-pagestatus="new : 2025.09.19">
+<%-include('./include/skipnavigation.ejs')%>
+
+	<div class="wrap">
+		<!--[D] HEADER -->
+		<%-include('./include/header.ejs',{"type": "01"})%>
+		<!--//[D] HEADER -->
+
+		<!-- [D] CONTENTS -->
+		<main id="content">
+		</main>
+		<!-- // [D] CONTENTS -->
+
+		<!--[D] FOOTER -->
+		<%-include('./include/footer.ejs',{"type": "01"})%>
+		<!--// [D] FOOTER -->
+	</div>
+
+	<!-- [D] LAYER -->
+	<div class="layer"></div>
+	<!-- [D] LAYER -->
+
+<%-include('./include/script.ejs')%>
+</body>
+</html>

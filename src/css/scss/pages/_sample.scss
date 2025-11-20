@@ -1,0 +1,151 @@
+// Sample : 일부 Mixin 사용 가이드 포함
+#content {
+  &:not(.sample-wrap){
+    padding:20px;
+ }
+}
+i {
+  display: inline-block;
+}
+.sample-wrap {
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:100%;
+  min-height:100vh;
+  box-sizing:border-box;
+
+  .sample-box {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    min-height:100vh;
+    background-color:#5a5ab4;
+    @include breakpoint(tablet){
+      background-color:#000;
+    }
+    @include breakpoint(mobile){
+      background-color:gray;
+    }
+
+    h1 {
+       @include vw-font-style-pc(70, bold, 1.5, 10, 10);
+       color:#fff;
+    }
+    .sample-dummy-text {
+      max-width:1200px;
+      width:100%;
+      padding:15px;
+      background-color:#fc0;
+      color:#000;
+      box-sizing:border-box;
+      @include vw-font-style-pc(50, bold, 60px, 10, 10);
+      // 중간 값 미지정일 경우 false 입력
+      @include vw-font-style-tb(38, false, false, 10, 10);
+      @include vw-convert-pc(width, 1200);
+
+      // breakpoint 하단에 호출하기
+      @include breakpoint(tablet){
+        color:#fff;
+      }
+      @include breakpoint(mobile){
+        color:coral;
+      }
+    }
+  }
+}
+.block-element {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-bottom:100px;
+
+  strong {
+    display: block;
+    font-size: 20px;
+    line-height: 35px;
+    margin-bottom: 15px;
+  }
+}
+
+.sp-sample-01 {
+  @include sp-normal('fork')
+}
+
+.sp-sample-02 {
+  @include sp-retina('fork')
+}
+
+.svg-sprite-sample-01{
+  @include useSvg-icons('twitter', 30px)
+}
+
+.svg-sprite-sample-02{
+  @include useSvg-icons('window', 30px)
+}
+
+.svg-sprite-sample-03{
+  @include useSvg-icons('youtube', 30px)
+}
+
+.vw-sample-text {
+  padding: 10px;
+  background-color: lightcoral;
+  @include vw-font-style-pc(50, bold, 50px);
+  color: #fff;
+}
+
+.flexbox-sample {
+  @include flexbox;
+  @include flex-direction(column);
+  @include justify-content(center);
+  @include align-content(center);
+  height: 250px;
+  background-color: plum;
+}
+
+.flex-item-sample1 {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  @include flex(1 1 auto);
+  @include order(2);
+}
+
+.flex-item-sample2 {
+  width: 200px;
+  height: 100px;
+  background-color: blue;
+  @include flex(0 0 auto);
+  @include order(1);
+}
+
+.ellipsis-multi-sample {
+  @include ellipsis(2);
+  @include font-style(15, false, 20px);
+}
+
+.ellipsis-sample {
+  max-width: 500px;
+  margin-top: 10px;
+  @include ellipsis(1);
+  @include font-style(12, bold, 1.5);
+}
+
+@include breakpoint(tablet) {
+  .vw-sample-text {
+    background-color: lightgreen;
+    @include vw-font-style-tb(50, 400, 1.5);
+    color:#000;
+  }
+}
+
+@include breakpoint(mobile) {
+  .vw-sample-text {
+    background-color: lightsalmon;
+    @include vw-font-style-mo(25, false, 30px);
+  }
+}
