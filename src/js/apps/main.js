@@ -1,89 +1,80 @@
-;(function (win, $) {
-    var variableGlobal = 'global variable'
+let currentAvatarKey = 'tone';
+const currentAvatar = {
+  tone: 'tone_300',
+  hair_type: 'hair_short3',
+  hair_color: 'black',
+  clothes: 'hoodie',
+  accessories: 'acc_none',
+};
 
-    // sample1
-    var sample = (function () {
-        var variable = 'sample loaded';
-        return {
-            init: function () {
-                console.log(variable)
-                console.log(variableGlobal)
-            }
-        }
-    })();
+const avatarMenu = document.querySelector('#avatar-menu');
+const avatarSelectors = document.querySelectorAll('.avatar-selector');
+const avatarMenuItems = avatarMenu.querySelectorAll('.avatar-menu-item');
+const avatarImages = document.querySelectorAll('.avatar-image');
+const avatar = document.querySelector('#avatar');
+const saveButton = document.querySelector('#save-button');
 
-    // sample2
-    var sample2 = (function () {
-        var variable = 'sample2 loaded';
-        return {
-            init: function () {
-                console.log(variable)
-            }
-        }
-    })();
+avatarMenu.addEventListener('click', handleAvatarMenuClick);
+for (const avatarSelector of avatarSelectors) {
+  avatarSelector.addEventListener('click', handleAvatarSelectorClick);
+}
+saveButton.addEventListener('click', handleSaveClick);
 
-    // sample3
-    var sample3 = (function () {
-        var variable = 'sample3 loaded';
+function updateAvatarMenu(avatarKey) {
+  for (const avatarSelector of avatarSelectors) {
+    avatarSelector.classList.toggle(
+      'active',
+      avatarSelector.dataset.avatarKey == avatarKey
+    );
+  }
 
-        var init = function () {
-            console.log(variable)
-        }
-        return {
-            init: init
-        }
-    })();
+  for (const avatarMenuItem of avatarMenuItems) {
+    avatarMenuItem.classList.toggle(
+      'active',
+      avatarMenuItem.dataset.avatarKey === avatarKey
+    );
+  }
+}
 
-    // sample4
-    var sample4 = function () {
-        var variable = 'sample4 loaded';
+function updateAvatar(avatarKey, avatarValue) {
+  currentAvatar[avatarKey] = avatarValue;
 
-        console.log(variable)
+  let imageKey = avatarKey;
+  let filename = currentAvatar[avatarKey];
+  if (avatarKey.indexOf('hair') === 0) {
+    imageKey = 'hair';
+    filename = `${currentAvatar.hair_type}-${currentAvatar.hair_color}`;
+  }
+
+  for (const avatarImage of avatarImages) {
+    if (avatarImage.dataset.imageKey === imageKey) {
+      avatarImage.setAttribute('src', `./images/avatar/${filename}.svg`);
+      break;
     }
+  }
+}
 
-    // sample5
-    function sample5() {
-        var variable = 'sample5 loaded';
+function handleAvatarMenuClick(e) {
+  const nextAvatarKey = e.target.dataset.avatarKey;
+  if (!nextAvatarKey) return;
+  currentAvatarKey = nextAvatarKey;
+  updateAvatarMenu(currentAvatarKey);
+}
 
-        console.log(variable)
-    }
+function handleAvatarSelectorClick(e) {
+  const nextAvatarValue = e.target.dataset.avatarValue;
+  if (!nextAvatarValue) return;
+  updateAvatar(currentAvatarKey, nextAvatarValue);
+}
 
-    // sample6
-    $.fn.sample6 = function (options) {
-        var settings = {
-            var1: 'var1',
-            var2: 650
-        };
-        var opts = $.extend({}, settings, options);
+function handleSaveClick() {
+  html2canvas(avatar).then(function (canvas) {
+    // <a> 요소를 만들고, 이미지 데이터를 변환해서 주소로 지정한다
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = 'avatar.png';
+    // <a> 태그를 자바스크립트로 클릭한다
+    link.click();
+  });
+}
 
-        return this.each(function () {
-            var obj = $(this),
-                testText = 'sample6 loaded',
-                var1 = opts.var1,
-                var2 = opts.var2;
-
-            var test = {
-                init: function () {
-                    test.bindEvent();
-                },
-                bindEvent: function () {
-                    console.log(testText, var1, var2)
-                }
-            };
-            test.init();
-        });
-    };
-
-
-    $(function () {
-        sample2.init();
-        sample3.init();
-    });
-
-    $(win).on('load', function () {
-        sample.init();
-        sample4();
-        sample5();
-        $('body').sample6();
-    });
-})(window, window.jQuery);
