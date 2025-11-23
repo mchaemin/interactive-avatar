@@ -1,0 +1,194 @@
+<!DOCTYPE html><html lang="ko"><head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="format-detection" content="telephone=no">
+	
+	<title>avatar</title>
+	<!-- SEO meta tag -->
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="date" content="">
+	<meta name="sitecode" content="">
+	<!-- // SEO meta tag -->
+	<!-- Open Graph -->
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+	<meta property="og:type" content="">
+	<meta property="og:site_name" content="">
+	<meta property="og:locale" content="">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:country-name" content="">
+	<!-- // Open Graph -->
+	<!-- Icon & Favicon -->
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+	<link rel="apple-touch-icon" href="../favicon-180x180.png">
+	<!-- // Icon & Favicon -->
+	<link rel="stylesheet" href="../css/libs.css">
+	<link rel="stylesheet" href="../css/avarta.css">
+</head>
+
+<body data-pagestatus="new : 2025.09.19">
+	<div class="wrap">
+		<nav class="nav">
+			<button id="save-button" class="button">Save</button>
+		</nav>
+		<div class="container">
+			<div class="preview">
+				<div class="avatar-container">
+					<div class="avatar" id="avatar">
+						<img class="avatar-image" data-image-key="tone" src="../img/avatar/tone_300.svg" alt="">
+						<img class="avatar-image" data-image-key="clothes" src="../img/avatar/hoodie.svg" alt="">
+						<img class="avatar-image" data-image-key="hair" src="../img/avatar/hair_short3-black.svg" alt="">
+						<img class="avatar-image" data-image-key="accessories" src="../img/avatar/acc_none.svg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<ul class="avatar-menu" id="avatar-menu">
+					<li class="avatar-menu-item active" data-avatar-key="tone">Skin tone</li>
+					<li class="avatar-menu-item" data-avatar-key="hair_type">Hair type</li>
+					<li class="avatar-menu-item" data-avatar-key="hair_color">Hair color</li>
+					<li class="avatar-menu-item" data-avatar-key="clothes">Clothes</li>
+					<li class="avatar-menu-item" data-avatar-key="accessories">Accessory</li>
+				</ul>
+				<div class="avatar-selector-container">
+					<!-- Skin tone -->
+					<ul class="avatar-selector active" data-avatar-key="tone">
+						<li class="avatar-selector-item" data-avatar-value="tone_100">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_tone_100.svg')"></div>
+							<div class="avatar-selector-label">Tone 100</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="tone_200">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_tone_200.svg')"></div>
+							<div class="avatar-selector-label">Tone 200</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="tone_300">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_tone_300.svg')"></div>
+							<div class="avatar-selector-label">Tone 300</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="tone_400">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_tone_400.svg')"></div>
+							<div class="avatar-selector-label">Tone 400</div>
+						</li>
+					</ul>
+					<!-- Hair type -->
+					<ul class="avatar-selector" data-avatar-key="hair_type">
+						<li class="avatar-selector-item" data-avatar-value="hair_long1">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_hair_long1.svg')"></div>
+							<div class="avatar-selector-label">Long hair 1</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="hair_long2">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_hair_long2.svg')"></div>
+							<div class="avatar-selector-label">Long hair 2</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="hair_long3">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_hair_long3.svg')"></div>
+							<div class="avatar-selector-label">Long hair 3</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="hair_short1">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_hair_short1.svg')"></div>
+							<div class="avatar-selector-label">Short hair 1</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="hair_short2">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_hair_short2.svg')"></div>
+							<div class="avatar-selector-label">Short hair 2</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="hair_short3">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_hair_short3.svg')"></div>
+							<div class="avatar-selector-label">Short hair 3</div>
+						</li>
+					</ul>
+					<!-- Hair color -->
+					<ul class="avatar-selector" data-avatar-key="hair_color">
+						<li class="avatar-selector-item" data-avatar-value="black">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_color_black.svg')"></div>
+							<div class="avatar-selector-label">Black</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="blonde">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_color_blonde.svg')"></div>
+							<div class="avatar-selector-label">Blonde</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="brown">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_color_brown.svg')"></div>
+							<div class="avatar-selector-label">Brown</div>
+						</li>
+					</ul>
+					<!-- Clothes -->
+					<ul class="avatar-selector" data-avatar-key="clothes">
+						<li class="avatar-selector-item" data-avatar-value="collar_basic">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_collar_basic.svg')"></div>
+							<div class="avatar-selector-label">Collar basic</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="dress_formal">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_dress_formal.svg')"></div>
+							<div class="avatar-selector-label">Formal dress</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="hoodie">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_hoodie.svg')"></div>
+							<div class="avatar-selector-label">Hoodie</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="jacket_leather">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_jacket_leather.svg')"></div>
+							<div class="avatar-selector-label">Leather jacket</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="knit_layered">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_knit_layered.svg')"></div>
+							<div class="avatar-selector-label">Knit layered</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="knit_vest">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_knit_vest.svg')"></div>
+							<div class="avatar-selector-label">Knit vest</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="tshirt_basic">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_tshirt_basic.svg')"></div>
+							<div class="avatar-selector-label">T-shirt basic</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="tshirt_printed">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_tshirt_printed.svg')"></div>
+							<div class="avatar-selector-label">T-shirt printed</div>
+						</li>
+					</ul>
+					<!-- Accessories -->
+					<ul class="avatar-selector" data-avatar-key="accessories">
+						<li class="avatar-selector-item" data-avatar-value="acc_ballcap">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_acc_ballcap.svg')"></div>
+							<div class="avatar-selector-label">Ballcap</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="acc_earbuds">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_acc_earbuds.svg')"></div>
+							<div class="avatar-selector-label">Earbuds</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="acc_earings">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_acc_earings.svg')"></div>
+							<div class="avatar-selector-label">Earings</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="acc_headset">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_acc_headset.svg')"></div>
+							<div class="avatar-selector-label">Headset</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="acc_nametag">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_acc_nametag.svg')"></div>
+							<div class="avatar-selector-label">Nametag</div>
+						</li>
+						<li class="avatar-selector-item" data-avatar-value="acc_none">
+							<div class="avatar-selector-preview" style="background-image: url('../img/avatar/previews/preview_acc_none.svg')"></div>
+							<div class="avatar-selector-label">No accessory</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Javascript -->
+	<script src="../js/libs.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image-more/3.7.1/dom-to-image-more.min.js"></script>
+	<script src="../js/avatar.min.js"></script>
+	<!-- // Javascript -->
+
+
+
+</body></html>
