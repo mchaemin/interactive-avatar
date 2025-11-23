@@ -8,7 +8,7 @@
     "dist": "dist/js/",
     "srcApps": "src/js/apps/*.js",
     "libsApps": "src/js/libs/*.js",
-    "minifyFileName": "project-name.min.js"
+    "minifyFileName": "avatar.min.js"
   },
   "fontsSetting": {
     "src": "src/font/**/*",
