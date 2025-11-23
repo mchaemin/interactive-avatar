@@ -48,33 +48,62 @@ function updateAvatar(avatarKey, avatarValue) {
 
   for (const avatarImage of avatarImages) {
     if (avatarImage.dataset.imageKey === imageKey) {
-      avatarImage.setAttribute('src', `./images/avatar/${filename}.svg`);
+      avatarImage.setAttribute('src', `../img/avatar/${filename}.svg`);
       break;
     }
   }
 }
 
 function handleAvatarMenuClick(e) {
-  const nextAvatarKey = e.target.dataset.avatarKey;
+  const nextItem = e.target.closest('.avatar-menu-item');
+  if (!nextItem) return;
+  const nextAvatarKey = nextItem.dataset.avatarKey;
   if (!nextAvatarKey) return;
   currentAvatarKey = nextAvatarKey;
   updateAvatarMenu(currentAvatarKey);
 }
 
 function handleAvatarSelectorClick(e) {
-  const nextAvatarValue = e.target.dataset.avatarValue;
+  const selectorItem = e.target.closest('.avatar-selector-item');
+  if (!selectorItem) return;
+
+  const selectorList = selectorItem.closest('.avatar-selector');
+  if (!selectorList || !selectorList.classList.contains('active')) return;
+
+  const nextAvatarValue = selectorItem.dataset.avatarValue;
   if (!nextAvatarValue) return;
+
   updateAvatar(currentAvatarKey, nextAvatarValue);
 }
 
 function handleSaveClick() {
-  html2canvas(avatar).then(function (canvas) {
-    // <a> 요소를 만들고, 이미지 데이터를 변환해서 주소로 지정한다
-    const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png');
-    link.download = 'avatar.png';
-    // <a> 태그를 자바스크립트로 클릭한다
-    link.click();
-  });
-}
+  const target = document.querySelector('.avatar');
+  if (!target) return;
 
+  const saveDataUrl = (dataUrl) => {
+    const link = document.createElement('a');
+    link.href = dataUrl;
+    link.download = 'avatar.png';
+    link.click();
+  };
+
+  if (typeof domtoimage !== 'undefined') {
+    domtoimage
+      .toPng(target, { bgcolor: '#ffffff', cacheBust: true })
+      .then(saveDataUrl)
+      .catch((err) => {
+        console.error('domtoimage failed, fallback to html2canvas', err);
+        if (typeof html2canvas !== 'undefined') {
+          html2canvas(target, { useCORS: true, backgroundColor: '#ffffff' }).then(
+            (canvas) => saveDataUrl(canvas.toDataURL('image/png'))
+          );
+        }
+      });
+  } else if (typeof html2canvas !== 'undefined') {
+    html2canvas(target, { useCORS: true, backgroundColor: '#ffffff' }).then(
+      (canvas) => saveDataUrl(canvas.toDataURL('image/png'))
+    );
+  } else {
+    console.error('No capture library available');
+  }
+}
