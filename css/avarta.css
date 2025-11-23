@@ -1,0 +1,473 @@
+@charset "UTF-8";
+/* flex containers에 적용 */
+/* flex items에 적용 */
+/** 사용 예시
+ 	// 속성, 값, 최소값(기본값 0; 생략가능)
+	* @include vw-convert-pc(margin, (20, auto, 40, auto), 10)
+	* @include vw-convert-pc(width, 1200);
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+textarea,
+input,
+select,
+textarea,
+button,
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+footer,
+nav,
+figure,
+main {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+article,
+aside,
+dialog,
+footer,
+header,
+section,
+footer,
+nav,
+figure,
+main {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+}
+
+img,
+form,
+fieldset,
+svg,
+li {
+  border: 0;
+  vertical-align: top;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  overflow: visible;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  margin: -1px;
+}
+
+input,
+button,
+select {
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+address,
+caption,
+em {
+  font-style: normal;
+}
+
+a,
+a:focus,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-family: NanumBarunGothic, "나눔바른고딕", "Nanum BarunGothic", "Malgun Gothic", "맑은고딕", "Apple SD Gothic Neo", Dotum, "돋움", sans-serif;
+}
+
+.blind,
+caption span,
+legend {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
+
+.skip {
+  height: 0;
+}
+
+.skip a {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -100px;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+}
+
+.skip a:focus,
+#skip a:active {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  padding: 10px 0;
+  background: #000;
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* Nanum Barun Gothic */
+/* Nanum Barun Gothic */
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../font/nanumBarunGothic.woff") format("woff");
+}
+@font-face {
+  font-family: "NanumBarunGothic";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../font/nanumBarunGothicBold.woff") format("woff");
+}
+/* flex containers에 적용 */
+/* flex items에 적용 */
+/** 사용 예시
+ 	// 속성, 값, 최소값(기본값 0; 생략가능)
+	* @include vw-convert-pc(margin, (20, auto, 40, auto), 10)
+	* @include vw-convert-pc(width, 1200);
+*/
+.svg-sample {
+  display: inline-block;
+}
+.svg-sample-01 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' fill='%23cecece' viewBox='0 0 24 19.5'%3E%3Cpath d='M24 2.3c-.9.4-1.8.7-2.8.8 1-.6 1.8-1.6 2.2-2.7-1 .6-2 1-3.1 1.2C19.3.6 18 0 16.6 0c-2.7 0-4.9 2.2-4.9 4.9 0 .4 0 .8.1 1.1C7.7 5.8 4.1 3.9 1.7.9c-.5.7-.7 1.6-.7 2.5 0 1.7.9 3.2 2.2 4.1-.8-.1-1.6-.3-2.2-.6V7c0 2.4 1.7 4.4 3.9 4.8-.4.1-.8.2-1.3.2-.3 0-.6 0-.9-.1.6 2 2.4 3.4 4.6 3.4-1.7 1.3-3.8 2.1-6.1 2.1-.4 0-.8 0-1.2-.1 2.2 1.4 4.8 2.2 7.5 2.2 9.1 0 14-7.5 14-14v-.6c1-.7 1.8-1.6 2.5-2.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+.svg-sample-01:hover {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' fill='orange' viewBox='0 0 24 19.5'%3E%3Cpath d='M24 2.3c-.9.4-1.8.7-2.8.8 1-.6 1.8-1.6 2.2-2.7-1 .6-2 1-3.1 1.2C19.3.6 18 0 16.6 0c-2.7 0-4.9 2.2-4.9 4.9 0 .4 0 .8.1 1.1C7.7 5.8 4.1 3.9 1.7.9c-.5.7-.7 1.6-.7 2.5 0 1.7.9 3.2 2.2 4.1-.8-.1-1.6-.3-2.2-.6V7c0 2.4 1.7 4.4 3.9 4.8-.4.1-.8.2-1.3.2-.3 0-.6 0-.9-.1.6 2 2.4 3.4 4.6 3.4-1.7 1.3-3.8 2.1-6.1 2.1-.4 0-.8 0-1.2-.1 2.2 1.4 4.8 2.2 7.5 2.2 9.1 0 14-7.5 14-14v-.6c1-.7 1.8-1.6 2.5-2.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.svg-sample-02 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' fill='red' viewBox='0 0 13 13'%3E%3Cpath d='M11 11H2V2h4V0H0v13h13V7h-2z'/%3E%3Cpath d='M10.5 0H8v2h1.1L4.5 6.9l1.6 1.5L11 3.9V5h2V0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+.svg-sample-02:hover {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' fill='coral' viewBox='0 0 13 13'%3E%3Cpath d='M11 11H2V2h4V0H0v13h13V7h-2z'/%3E%3Cpath d='M10.5 0H8v2h1.1L4.5 6.9l1.6 1.5L11 3.9V5h2V0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+.svg-sample-03 {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' fill='orange' viewBox='0 0 85.8 60'%3E%3Cpath d='M84 9.4c-1-3.7-3.9-6.6-7.6-7.6C69.7 0 42.9 0 42.9 0S16.1 0 9.4 1.8c-3.7 1-6.6 3.9-7.6 7.6C0 16.1 0 30 0 30s0 13.9 1.8 20.6c1 3.7 3.9 6.6 7.6 7.6C16.1 60 42.9 60 42.9 60s26.8 0 33.5-1.8c3.7-1 6.6-3.9 7.6-7.6 1.8-6.7 1.8-20.6 1.8-20.6s0-13.9-1.8-20.6M34.3 42.9V17.1L56.6 30z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  vertical-align: middle;
+}
+.svg-sample-03:hover {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' xml:space='preserve' fill='%2300f' viewBox='0 0 85.8 60'%3E%3Cpath d='M84 9.4c-1-3.7-3.9-6.6-7.6-7.6C69.7 0 42.9 0 42.9 0S16.1 0 9.4 1.8c-3.7 1-6.6 3.9-7.6 7.6C0 16.1 0 30 0 30s0 13.9 1.8 20.6c1 3.7 3.9 6.6 7.6 7.6C16.1 60 42.9 60 42.9 60s26.8 0 33.5-1.8c3.7-1 6.6-3.9 7.6-7.6 1.8-6.7 1.8-20.6 1.8-20.6s0-13.9-1.8-20.6M34.3 42.9V17.1L56.6 30z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
+
+.wrap {
+  background-color: #f7f7f7;
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+  -webkit-background-size: 80px 80px;
+  background-size: 80px 80px;
+  background-position: -24px -24px;
+  padding-top: 24px;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #e97000;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: calc(100vh - 48px);
+}
+
+.preview {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.avatar-container {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  background-image: url("../img/avatar-border.svg");
+  background-position: center center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+.avatar {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  border-radius: 16px;
+  border: 9px solid #ffffff;
+  background: #fff;
+  margin-top: 24px;
+  padding: 20px 8px 23px;
+}
+
+.avatar-menu {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.avatar-menu-item {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.avatar-menu-item.active {
+  font-weight: bold;
+}
+
+.avatar-selector-container {
+  margin-top: 20px;
+}
+
+.avatar-selector {
+  list-style: none;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.avatar-selector-item {
+  cursor: pointer;
+  text-align: center;
+}
+
+.avatar-selector-item.active .avatar-selector-preview {
+  border: 2px solid #000;
+}
+
+.avatar-selector-preview {
+  width: 100px;
+  height: 100px;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
+.avatar-selector-label {
+  font-size: 14px;
+}
+
+.avatar-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 13px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.avatar-menu-item {
+  font-size: 18px;
+  color: #6f6f6f;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.avatar-menu-item.active {
+  color: #e97000;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.avatar-selector-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 27px 0 0;
+}
+
+.avatar-selector {
+  display: none;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 38px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.avatar-selector.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.avatar-selector-item.active > .avatar-selector-preview {
+  border: 4px solid #e97000;
+  background-color: #fff3e9;
+}
+
+.avatar-selector-item.active > .avatar-selector-label {
+  color: #e97000;
+}
+
+.avatar-selector-item {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.avatar-selector-preview {
+  width: 194px;
+  height: 114px;
+  border-radius: 13px;
+  background-color: #f0f0f0;
+  border: 4px solid #f0f0f0;
+  cursor: pointer;
+}
+
+.avatar-selector-title {
+  color: #6f6f6f;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+}
